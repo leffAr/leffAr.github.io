@@ -1,200 +1,344 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id" data-theme="dark">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Lefi Ardana</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="style.css" />
-  <link rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-</head>
-<body class="bg-gray-900 text-gray-200">
-
-  <!-- Navbar -->
-  <nav class="navbar fixed w-full bg-gray-950 shadow-md z-50">
-    <div class="container mx-auto px-6 py-4 flex justify-between items-center">
-      <a href="#home" class="text-2xl font-bold text-blue-400">Portfolio</a>
-      <div class="hidden md:flex space-x-10">
-        <a href="#home" class="nav-link nav-active">Home</a>
-        <a href="#about" class="nav-link">About</a>
-        <a href="#skills" class="nav-link">Skills</a>
-        <a href="#projects" class="nav-link">Projects</a>
-        <a href="#contact" class="nav-link">Contact</a>
-      </div>
-      <div class="md:hidden">
-        <button id="menu-toggle" class="text-gray-400 hover:text-blue-400">
-          <i class="fas fa-bars text-xl"></i>
-        </button>
-      </div>
-    </div>
-    <!-- Mobile Menu -->
-    <div id="mobile-menu" class="hidden md:hidden bg-gray-950 border-t border-gray-800">
-      <div class="flex flex-col space-y-4 px-6 py-4">
-        <a href="#home" class="nav-link nav-active">Home</a>
-        <a href="#about" class="nav-link">About</a>
-        <a href="#skills" class="nav-link">Skills</a>
-        <a href="#projects" class="nav-link">Projects</a>
-        <a href="#contact" class="nav-link">Contact</a>
-      </div>
-    </div>
-  </nav>
-
-  <!-- Hero -->
-  <section id="home" class="hero-pattern min-h-screen flex items-center pt-20">
-    <div class="container mx-auto px-6 flex flex-col-reverse md:flex-row items-center gap-12">
-      <div class="md:w-1/2 text-center md:text-left">
-        <h1 class="text-4xl md:text-5xl font-bold animate-text">
-          Hi, I'm <span class="text-blue-400">Lefi Ardana</span>
-        </h1>
-        <p class="text-lg text-gray-400 mt-4">Frontend Developer & UI/UX Designer</p>
-        <p class="text-gray-500 mt-6">
-          Saya mengembangkan website dan aplikasi yang modern, responsif, serta ramah pengguna.
-        </p>
-        <div class="mt-8 flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
-          <a href="#projects" class="btn-primary">View Work</a>
-          <a href="#contact" class="btn-dark">Contact Me</a>
-        </div>
-      </div>
-      <div class="md:w-1/2 flex justify-center">
-        <div class="w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden shadow-xl border-4 border-blue-400">
-          <img src="images/lefi.jpeg" alt="Lefi" class="w-full h-full object-cover" />
-        </div>
-      </div>
-    </div>
-  </section>
-
- <!-- About -->
-<section id="about" class="py-20 bg-gray-950 text-white">
-  <div class="container mx-auto px-6 text-center md:text-left">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lefi Ardana | Web Developer & UI Designer</title>
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
-    <!-- Judul -->
-    <h2 class="section-title">About Me</h2>
-    <div class="section-divider"></div>
+    <link rel="stylesheet" href="css/style.css">
+    
+</head>
+<body>
 
-    <!-- Konten -->
-    <div class="flex flex-col md:flex-row items-center mt-12 gap-12">
-      
-      <!-- Foto Profil -->
-      <div class="md:w-1/3">
-        <div class="w-64 h-64 mx-auto rounded-full overflow-hidden shadow-xl border-4 border-blue-500">
-          <img src="images/lefi.jpeg" alt="About" class="w-full h-full object-cover" />
+    <!-- Backgrounds -->
+    <div class="gradient-bg"></div>
+    <canvas id="particle-canvas"></canvas>
+
+    <!-- Custom Cursor -->
+    <div class="cursor-dot"></div>
+    <div class="cursor-outline"></div>
+
+    <!-- Scroll Progress -->
+    <div id="scroll-progress"></div>
+
+    <!-- Loading Screen -->
+    <div id="loader">
+        <div class="loader-content">
+            <div class="spinner"></div>
+            <div class="loader-text">LEFI ARDANA</div>
         </div>
-      </div>
-
-      <!-- Deskripsi -->
-      <div class="md:w-2/3">
-        <p class="mb-6 text-gray-300">
-          Hi, I’m Lefi Ardana — Frontend Developer & UI/UX Designer.
-        </p>
-        <p class="mb-6 text-gray-300">
-          Saya adalah seorang pemula di bidang pengembangan website dan aplikasi yang memiliki ketertarikan dalam membangun solusi digital yang modern, responsif, dan ramah pengguna. Dengan fokus pada penulisan kode yang rapi dan desain yang intuitif, saya terus mengembangkan kemampuan melalui pembelajaran dan eksplorasi teknologi terbaru untuk memberikan nilai nyata bagi pengguna.
-
-        </p>
-
-        <!-- Tombol CV -->
-        <a href="images/Cv Lefi.pdf" target="_blank" class="btn-primary inline-block">
-          📄 Download My CV
-        </a>
-      </div>
     </div>
-  </div>
-</section>
 
-  <!-- Skills -->
-  <section id="skills" class="py-20 bg-gray-900">
-    <div class="container mx-auto px-6 text-center">
-      <h2 class="section-title">My Skills</h2>
-      <div class="section-divider"></div>
-      <div class="grid grid-cols-2 md:grid-cols-4 gap-8 mt-12">
-        <div class="skill-card">
-          <img src="images/htmll.png" alt="HTML" class="skill-img" />
-          <h3>HTML</h3>
-        </div>
-        <div class="skill-card">
-          <img src="images/csss.png" alt="CSS" class="skill-img" />
-          <h3>CSS</h3>
-        </div>
-        <div class="skill-card">
-          <img src="images/Java.png" alt="JavaScript" class="skill-img" />
-          <h3>JavaScript</h3>
-        </div>
-        <div class="skill-card">
-          <img src="images/react.png" alt="React" class="skill-img" />
-          <h3>React</h3>
-        </div>
-      </div>
-    </div>
-  </section>
+    <!-- Navbar -->
+    <header id="header">
+        <nav>
+            <a href="#home" class="logo">Lefi<span>.</span></a>
+            <ul class="nav-links">
+                <li><a href="#home" class="active">Home</a></li>
+                <li><a href="#about">Tentang</a></li>
+                <li><a href="#skills">Skill</a></li>
+                <li><a href="#projects">Project</a></li>
+                <li><a href="#experience">Pengalaman</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="nav-controls">
+                <button id="theme-toggle"><i class="fas fa-moon"></i></button>
+                <button class="mobile-menu-btn"><i class="fas fa-bars"></i></button>
+            </div>
+        </nav>
+    </header>
 
-  <!-- Projects -->
-  <section id="projects" class="py-20 bg-gray-950">
-    <div class="container mx-auto px-6 text-center">
-      <h2 class="section-title">My Projects</h2>
-      <div class="section-divider"></div>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-10 mt-12">
-        <div class="project-card">
-          <img src="images/profile.png" alt="Project 1" class="project-img" />
-          <h3 class="mt-4 font-semibold">Portfolio Website</h3>
-          <p class="text-sm text-gray-400 mt-2">Personal portfolio built with HTML, CSS, JS.</p>
+    <!-- Hero Section -->
+    <section id="home">
+        <div class="hero-content reveal parallax-el" data-speed="-2">
+            <span class="hero-greeting">Halo, Selamat Datang!</span>
+            <h1 class="hero-title">Saya <br><span>Lefi Ardana</span></h1>
+            <h2 class="hero-subtitle">
+                <span class="typed-text"></span><span class="typing-cursor">&nbsp;</span>
+            </h2>
+            <p class="hero-desc">Saya membangun website modern yang interaktif, responsif, dan memberikan pengalaman pengguna yang luar biasa dengan desain futuristik terkini.</p>
+            <div class="hero-btn-group">
+                <a href="#projects" class="btn btn-primary interactive-element">Lihat Project</a>
+                <a href="#contact" class="btn btn-outline interactive-element">Hubungi Saya</a>
+            </div>
         </div>
-        <div class="project-card">
-          <img src="images/ds.png" alt="Project 2" class="project-img" />
-          <h3 class="mt-4 font-semibold">E-commerce App</h3>
-          <p class="text-sm text-gray-400 mt-2">Fullstack e-commerce app with payment gateway.</p>
+        <div class="hero-img-container parallax-el" data-speed="3">
+            <div class="hero-img-bg"></div>
+            <div class="hero-img-inner tilt-card">
+                <!-- Fallback Profile Image using a cool abstract placeholder -->
+                <img src="img/profile.png" alt="Lefi Ardana" class="hero-img tilt-content">
+            </div>
         </div>
-        <div class="project-card">
-          <img src="images/di.png" alt="Project 3" class="project-img" />
-          <h3 class="mt-4 font-semibold">Dashboard UI</h3>
-          <p class="text-sm text-gray-400 mt-2">Admin dashboard with Tailwind + Chart.js.</p>
-        </div>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Contact -->
-  <section id="contact" class="py-20 bg-gray-900">
-    <div class="container mx-auto px-6">
-      <h2 class="section-title text-center">Get In Touch</h2>
-      <div class="section-divider"></div>
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-12 mt-12">
-        <!-- Info -->
-        <div class="space-y-6">
-          <div class="contact-card">
-            <i class="fas fa-envelope text-blue-400 text-2xl"></i>
-            <div><h3>Email</h3><p>lefiardana36@gmail.com</p></div>
-          </div>
-          <div class="contact-card">
-            <i class="fas fa-phone text-green-400 text-2xl"></i>
-            <div><h3>Phone</h3><p>+62 857 7386 0436</p></div>
-          </div>
-          <div class="contact-card">
-            <i class="fas fa-map-marker-alt text-red-400 text-2xl"></i>
-            <div><h3>Location</h3><p>Tangerang, Indonesia</p></div>
-          </div>
-          <div class="flex space-x-4">
-            <a href="https://facebook.com" target="_blank" class="social-icon"><i class="fab fa-facebook-f"></i></a>
-            <a href="https://www.instagram.com/leffyard?igsh=NmJia2QyZTEwN2Vm" target="_blank" class="social-icon"><i class="fab fa-instagram"></i></a>
-            <a href="https://linkedin.com" target="_blank" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
-            <a href="https://github.com/dashboard" target="_blank" class="social-icon"><i class="fab fa-github"></i></a>
-          </div>
+    <!-- About Section -->
+    <section id="about">
+        <h2 class="section-title reveal">Tentang <span>Saya</span></h2>
+        <div class="about-container reveal tilt-card">
+            <div class="about-img tilt-content">
+                <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Coding Setup">
+            </div>
+            <div class="about-text tilt-content">
+                <h3>Merubah Visi Menjadi Realitas Digital</h3>
+                <p>Saya adalah seorang Web Developer dan UI Designer yang bersemangat menciptakan antarmuka digital yang tidak hanya indah dipandang, tetapi juga memiliki performa optimal. Dengan pendekatan berorientasi pada detail, saya memastikan setiap baris kode dan setiap piksel desain memiliki tujuan.</p>
+                <p>Fokus utama saya adalah teknologi web modern, animasi interaktif, dan desain responsif yang bekerja sempurna di semua perangkat.</p>
+                <div class="about-stats">
+                    <div class="stat-item">
+                        <span class="stat-number">3+</span>
+                        <span class="stat-text">Tahun Pengalaman</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">20+</span>
+                        <span class="stat-text">Project Selesai</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">15+</span>
+                        <span class="stat-text">Klien Puas</span>
+                    </div>
+                </div>
+            </div>
         </div>
-        <!-- Form -->
-        <form class="bg-gray-800 rounded-lg shadow-lg p-6 space-y-4">
-          <input type="text" placeholder="Your Name" class="form-input" />
-          <input type="email" placeholder="Your Email" class="form-input" />
-          <textarea placeholder="Your Message" class="form-input h-32"></textarea>
-          <button type="submit" class="btn-primary w-full">Send Message</button>
-        </form>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Footer -->
-  <footer class="bg-gray-950 text-gray-400 py-6 text-center">
-    <p>© 2025 Lefi Ardana. All Rights Reserved.</p>
-  </footer>
+    <!-- Skills Section -->
+    <section id="skills">
+        <h2 class="section-title reveal">Keahlian <span>Saya</span></h2>
+        <div class="skills-container">
+            <div class="skills-bars reveal">
+                <h3>Technical Proficiency</h3>
+                
+                <div class="skill-bar">
+                    <div class="skill-info">
+                        <span>HTML & CSS</span>
+                        <span>95%</span>
+                    </div>
+                    <div class="progress-line"><span data-width="95%"></span></div>
+                </div>
+                
+                <div class="skill-bar">
+                    <div class="skill-info">
+                        <span>JavaScript (Vanilla & ES6+)</span>
+                        <span>85%</span>
+                    </div>
+                    <div class="progress-line"><span data-width="85%"></span></div>
+                </div>
+                
+                <div class="skill-bar">
+                    <div class="skill-info">
+                        <span>PHP & MySQL</span>
+                        <span>80%</span>
+                    </div>
+                    <div class="progress-line"><span data-width="80%"></span></div>
+                </div>
 
-  <script src="script.js"></script>
-</body>
+                <div class="skill-bar">
+                    <div class="skill-info">
+                        <span>UI/UX Design</span>
+                        <span>90%</span>
+                    </div>
+                    <div class="progress-line"><span data-width="90%"></span></div>
+                </div>
+            </div>
+
+            <div class="skills-cards-section reveal">
+                <h3>Tools & Technologies</h3>
+                <div class="skills-grid">
+                    <div class="skill-card tilt-card interactive-element">
+                        <i class="fab fa-html5 tilt-content"></i>
+                        <span class="tilt-content">HTML5</span>
+                    </div>
+                    <div class="skill-card tilt-card interactive-element">
+                        <i class="fab fa-css3-alt tilt-content"></i>
+                        <span class="tilt-content">CSS3</span>
+                    </div>
+                    <div class="skill-card tilt-card interactive-element">
+                        <i class="fab fa-js tilt-content"></i>
+                        <span class="tilt-content">JavaScript</span>
+                    </div>
+                    <div class="skill-card tilt-card interactive-element">
+                        <i class="fab fa-php tilt-content"></i>
+                        <span class="tilt-content">PHP</span>
+                    </div>
+                    <div class="skill-card tilt-card interactive-element">
+                        <i class="fas fa-database tilt-content"></i>
+                        <span class="tilt-content">MySQL</span>
+                    </div>
+                    <div class="skill-card tilt-card interactive-element">
+                        <i class="fab fa-bootstrap tilt-content"></i>
+                        <span class="tilt-content">Bootstrap</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects">
+        <h2 class="section-title reveal">Project <span>Terbaru</span></h2>
+        <div class="project-grid">
+            <!-- Project 1 -->
+            <div class="project-card reveal tilt-card">
+                <div class="project-img tilt-content">
+                    <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Project 1">
+                    <div class="project-overlay">
+                        <a href="#" class="interactive-element" title="Live Demo"><i class="fas fa-external-link-alt"></i></a>
+                        <a href="#" class="interactive-element" title="GitHub"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+                <div class="project-content tilt-content">
+                    <h3>Dashboard Analytics Neumorph</h3>
+                    <p>Sistem dashboard untuk pemantauan data statistik real-time dengan tema neumorphism dan fitur interaktif berbasis JavaScript murni.</p>
+                    <div class="project-tech">
+                        <span>HTML</span><span>CSS</span><span>JS</span><span>Chart.js</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 2 -->
+            <div class="project-card reveal tilt-card">
+                <div class="project-img tilt-content">
+                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Project 2">
+                    <div class="project-overlay">
+                        <a href="#" class="interactive-element" title="Live Demo"><i class="fas fa-external-link-alt"></i></a>
+                        <a href="#" class="interactive-element" title="GitHub"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+                <div class="project-content tilt-content">
+                    <h3>E-Commerce 3D Store</h3>
+                    <p>Toko online modern yang menggunakan efek paralaks dan rendering 3D CSS untuk presentasi produk yang lebih imersif.</p>
+                    <div class="project-tech">
+                        <span>PHP</span><span>MySQL</span><span>CSS Grid</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 3 -->
+            <div class="project-card reveal tilt-card">
+                <div class="project-img tilt-content">
+                    <img src="https://images.unsplash.com/photo-1522542550221-31fd19575a2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Project 3">
+                    <div class="project-overlay">
+                        <a href="#" class="interactive-element" title="Live Demo"><i class="fas fa-external-link-alt"></i></a>
+                        <a href="#" class="interactive-element" title="GitHub"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+                <div class="project-content tilt-content">
+                    <h3>Aplikasi Manajemen Tugas</h3>
+                    <p>Web app Kanban board dengan fungsionalitas drag-and-drop, validasi sisi klien, dan penyimpanan lokal (LocalStorage).</p>
+                    <div class="project-tech">
+                        <span>Vanilla JS</span><span>CSS Variables</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Timeline Section -->
+    <section id="experience">
+        <h2 class="section-title reveal">Timeline <span>Pengalaman</span></h2>
+        <div class="timeline">
+            
+            <div class="timeline-item reveal">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content tilt-card">
+                    <div class="tilt-content">
+                        <span class="timeline-date">2023 - Sekarang</span>
+                        <h3 class="timeline-title">Senior Web Developer</h3>
+                        <p class="timeline-company">TechNova Agency</p>
+                        <p>Memimpin pengembangan antarmuka frontend, mengoptimalkan performa web (FPS tinggi), dan merancang arsitektur UI sistem internal perusahaan.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="timeline-item reveal">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content tilt-card">
+                    <div class="tilt-content">
+                        <span class="timeline-date">2021 - 2023</span>
+                        <h3 class="timeline-title">UI Designer & Front-End</h3>
+                        <p class="timeline-company">Creative Studio Jkt</p>
+                        <p>Mengubah desain Figma menjadi kode HTML/CSS/JS yang interaktif, mengintegrasikan API pihak ketiga, dan memastikan responsivitas desain.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="timeline-item reveal">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content tilt-card">
+                    <div class="tilt-content">
+                        <span class="timeline-date">2019 - 2021</span>
+                        <h3 class="timeline-title">Freelance Web Developer</h3>
+                        <p class="timeline-company">Remote</p>
+                        <p>Membangun landing page dan sistem CMS custom menggunakan PHP & MySQL untuk klien UMKM dan startup tahap awal.</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <h2 class="section-title reveal">Hubungi <span>Saya</span></h2>
+        <div class="contact-container reveal">
+            <div class="contact-info">
+                <h3>Mari Bekerja Sama!</h3>
+                <p>Punya ide project brilian atau sekadar ingin berdiskusi soal web development? Jangan ragu untuk mengirim pesan kepada saya melalui form atau media sosial di bawah ini.</p>
+                
+                <div class="info-item interactive-element">
+                    <div class="info-icon"><i class="fas fa-envelope"></i></div>
+                    <div>
+                        <h4>Email</h4>
+                        <span>lefiardana36@gmail.com</span>
+                    </div>
+                </div>
+                
+                <div class="info-item interactive-element">
+                    <div class="info-icon"><i class="fas fa-map-marker-alt"></i></div>
+                    <div>
+                        <h4>Lokasi</h4>
+                        <span>Tangerang, Indonesia</span>
+                    </div>
+                </div>
+
+                <div class="social-links">
+                    <a href="#" class="interactive-element"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#" class="interactive-element"><i class="fab fa-github"></i></a>
+                    <a href="https://www.instagram.com/leffyard?igsh=NmJia2QyZTEwN2Vm" class="interactive-element"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="interactive-element"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+
+            <form class="contact-form" id="contactForm">
+                <div class="form-group">
+                    <input type="text" id="name" class="form-input" required>
+                    <label for="name" class="form-label">Nama Lengkap</label>
+                </div>
+                <div class="form-group">
+                    <input type="email" id="email" class="form-input" required>
+                    <label for="email" class="form-label">Alamat Email</label>
+                </div>
+                <div class="form-group">
+                    <input type="text" id="subject" class="form-input" required>
+                    <label for="subject" class="form-label">Subjek</label>
+                </div>
+                <div class="form-group">
+                    <textarea id="message" class="form-input" required></textarea>
+                    <label for="message" class="form-label">Pesan Anda</label>
+                </div>
+                <button type="submit" class="btn btn-primary interactive-element" id="submit-btn">
+                    <span>Kirim Pesan</span> <i class="fas fa-paper-plane"></i>
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Lefi Ardana. All Rights Reserved</p>
+    </footer>
+
+    <script src="js/script.js"></script>
+
+    </body>
 </html>
